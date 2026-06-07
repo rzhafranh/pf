@@ -1,5 +1,44 @@
 import { motion } from 'framer-motion';
 import { aboutData } from '../data';
+import { Lightbulb, MessageCircle, Users, Puzzle, Crown, HelpCircle } from 'lucide-react';
+
+// Map soft-skill icon names to lucide components
+const softSkillIconMap = {
+  lightbulb: Lightbulb,
+  'message-circle': MessageCircle,
+  users: Users,
+  puzzle: Puzzle,
+  crown: Crown,
+};
+const getSoftSkillIcon = (name) => softSkillIconMap[name] || HelpCircle;
+
+// Gradient accent colors for each hard-skill category
+const categoryMeta = [
+  {
+    key: 'graphicDesignUIUX',
+    title: 'Graphic Design & UI/UX',
+    gradient: 'from-electric-pink to-electric-purple',
+    glow: 'rgba(255, 0, 128, 0.35)',
+  },
+  {
+    key: 'codingProgramming',
+    title: 'Coding & Programming',
+    gradient: 'from-electric-blue to-electric-purple',
+    glow: 'rgba(0, 217, 255, 0.35)',
+  },
+  {
+    key: 'dataScience',
+    title: 'Data Science',
+    gradient: 'from-neon-green to-electric-blue',
+    glow: 'rgba(57, 255, 20, 0.35)',
+  },
+  {
+    key: 'other',
+    title: 'Other',
+    gradient: 'from-neon-yellow to-electric-pink',
+    glow: 'rgba(255, 255, 0, 0.35)',
+  },
+];
 
 const About = () => {
   return (
@@ -14,7 +53,7 @@ const About = () => {
           About Me
         </motion.h1>
         
-        {/* Content */}
+        {/* Profile Content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,6 +110,137 @@ const About = () => {
             </motion.p>
           </div>
         </motion.div>
+
+        {/* ─────────── Hard Skills Container ─────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="glass-effect rounded-3xl p-8 md:p-12 mt-12"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 bg-gradient-to-r from-electric-blue to-electric-pink bg-clip-text text-transparent">
+            Hard Skills
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {categoryMeta.map((cat, catIdx) => {
+              const skills = aboutData.hardSkills[cat.key] || [];
+              return (
+                <motion.div
+                  key={cat.key}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 + catIdx * 0.1 }}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+                >
+                  {/* Category title */}
+                  <h3 className={`text-lg font-semibold mb-5 bg-gradient-to-r ${cat.gradient} bg-clip-text text-transparent`}>
+                    {cat.title}
+                  </h3>
+
+                  {/* Skill chips */}
+                  <div className="flex flex-wrap gap-3">
+                    {skills.map((skill) => (
+                      <motion.div
+                        key={skill.name}
+                        whileHover={{ scale: 1.08, boxShadow: `0 0 18px ${cat.glow}` }}
+                        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.06] border border-white/10 text-white/90 text-sm transition-colors hover:border-white/25"
+                      >
+                        <img
+                          src={skill.icon}
+                          alt={skill.name}
+                          className="w-5 h-5 object-contain"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                          }}
+                        />
+                        <span>{skill.name}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* ─────────── Soft Skills Container ─────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="glass-effect rounded-3xl p-8 md:p-12 mt-12"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 bg-gradient-to-r from-electric-purple to-electric-pink bg-clip-text text-transparent">
+            Soft Skills
+          </h2>
+
+          <div className="flex flex-wrap justify-center gap-6">
+            {aboutData.softSkills.map((skill, idx) => {
+              const Icon = getSoftSkillIcon(skill.icon);
+              return (
+                <motion.div
+                  key={`${skill.name}-${idx}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 + idx * 0.08 }}
+                  whileHover={{ scale: 1.08, y: -4 }}
+                  className="flex flex-col items-center gap-3 group w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] md:w-[calc(14.285%-21px)]"
+                >
+                  {/* Icon container — rounded rectangle */}
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 flex items-center justify-center transition-all group-hover:border-electric-blue/40 group-hover:shadow-[0_0_20px_rgba(0,217,255,0.25)]">
+                    <Icon className="w-7 h-7 md:w-8 md:h-8 text-electric-blue/80 group-hover:text-electric-blue transition-colors" />
+                  </div>
+                  <span className="text-xs md:text-sm text-white/70 font-medium text-center group-hover:text-white/90 transition-colors">
+                    {skill.name}
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* ─────────── Language Proficiency Container ─────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="glass-effect rounded-3xl p-8 md:p-12 mt-12"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 bg-gradient-to-r from-neon-green to-electric-blue bg-clip-text text-transparent">
+            Language Proficiency
+          </h2>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            {aboutData.languages.map((lang, idx) => (
+              <motion.div
+                key={lang.name}
+                initial={{ opacity: 0, x: idx === 0 ? -20 : 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.9 + idx * 0.1 }}
+                whileHover={{ scale: 1.04, y: -3 }}
+                className="flex items-center gap-4 px-6 py-4 rounded-2xl bg-white/[0.05] border border-white/10 min-w-[220px] transition-all hover:border-electric-blue/30 hover:shadow-[0_0_20px_rgba(0,217,255,0.15)]"
+              >
+                {/* Flag */}
+                <img
+                  src={lang.flag}
+                  alt={`${lang.name} flag`}
+                  className="w-10 h-10 object-contain rounded"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
+
+                {/* Name & level */}
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-lg">{lang.name}</span>
+                  <span className="text-electric-blue/80 text-sm font-medium">{lang.level}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
       </div>
     </div>
   );

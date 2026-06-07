@@ -110,8 +110,8 @@ const Socials = () => {
             <motion.a
               key={social.id}
               href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={social.url.startsWith('mailto:') ? undefined : '_blank'}
+              rel={social.url.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 * index }}

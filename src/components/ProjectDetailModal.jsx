@@ -3,6 +3,19 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { getBadgeColor } from '../data';
 
+// Helper function to generate a consistent HSL color based on string hashing
+const getTechColor = (techName) => {
+  let hash = 0;
+  const str = techName.trim().toLowerCase();
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const hue = Math.abs(hash) % 360;
+  const saturation = 75 + (Math.abs(hash >> 8) % 15); // 75% - 90%
+  const lightness = 60 + (Math.abs(hash >> 16) % 10); // 60% - 70%
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+};
+
 const ProjectDetailModal = ({ project, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageOverlay, setIsImageOverlay] = useState(false);
@@ -135,6 +148,24 @@ const ProjectDetailModal = ({ project, onClose }) => {
               <p className="text-white/80 leading-relaxed text-lg">
                 {project.description}
               </p>
+              
+              {/* Technologies */}
+              {project.technologies && project.technologies.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-6">
+                  {project.technologies.map((tech) => {
+                    const color = getTechColor(tech);
+                    return (
+                      <span
+                        key={tech}
+                        style={{ borderColor: color, color: color }}
+                        className="border px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase bg-transparent"
+                      >
+                        {tech}
+                      </span>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           </motion.div>
         </motion.div>

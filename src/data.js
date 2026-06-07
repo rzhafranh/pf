@@ -1,12 +1,57 @@
-// ============================================
-// DATA DUMMY - GANTI DENGAN DATA ANDA SENDIRI
-// ============================================
-
 // Data untuk halaman About Me
 export const aboutData = {
   name: "Raihan Zhafran",
   photo: "/placeholder-profile.jpg", // Ganti dengan path foto Anda
-  description: "UI/UX Designer and System Developer with a Computer Science background from IPB University and a proven track record of bridging technical architecture with user-centered functionality. Specialized in translating complex business requirements into scalable digital solutions, leveraging a full-stack mentality to manage everything from database logic to front-end deployment. Experienced in leading technical initiatives and cross-functional teams, applying disciplined project tracking to ensure robust system delivery within high-stakes environments. Capable in translating user needs and system requirements into intuitive interfaces, design systems, and high-fidelity prototypes. Experienced in leading UI/UX initiatives across academic projects, student organizations, and competitions, with strong collaboration skills across design and engineering teams."
+  description: "UI/UX Designer and System Developer with a Computer Science background from IPB University and a proven track record of bridging technical architecture with user-centered functionality. Specialized in translating complex business requirements into scalable digital solutions, leveraging a full-stack mentality to manage everything from database logic to front-end deployment. Experienced in leading technical initiatives and cross-functional teams, applying disciplined project tracking to ensure robust system delivery within high-stakes environments. Capable in translating user needs and system requirements into intuitive interfaces, design systems, and high-fidelity prototypes. Experienced in leading UI/UX initiatives across academic projects, student organizations, and competitions, with strong collaboration skills across design and engineering teams.",
+
+  // Hard Skills - divided into 4 categories
+  // Ganti path icon dengan path gambar logo skill Anda (taruh di folder public/icons/)
+  hardSkills: {
+    graphicDesignUIUX: [
+      { name: "Figma", icon: "/icons/figma.png" },
+      { name: "Adobe Photoshop", icon: "/icons/photoshop.png" },
+      { name: "Adobe Illustrator", icon: "/icons/illustrator.png" },
+      { name: "Canva", icon: "/icons/canva.png" },
+      { name: "Prototyping", icon: "/icons/prototyping.png" },
+    ],
+    codingProgramming: [
+      { name: "JavaScript", icon: "/icons/javascript.png" },
+      { name: "Python", icon: "/icons/python.png" },
+      { name: "HTML/CSS", icon: "/icons/html-css.png" },
+      { name: "React", icon: "/icons/react.png" },
+      { name: "SQL", icon: "/icons/sql.png" },
+    ],
+    dataScience: [
+      { name: "Pandas", icon: "/icons/pandas.png" },
+      { name: "Data Visualization", icon: "/icons/data-viz.png" },
+      { name: "Machine Learning", icon: "/icons/machine-learning.png" },
+      { name: "Jupyter", icon: "/icons/jupyter.png" },
+      { name: "Statistics", icon: "/icons/statistics.png" },
+    ],
+    other: [
+      { name: "Git", icon: "/icons/git.png" },
+      { name: "Linux", icon: "/icons/linux.png" },
+      { name: "Agile/Scrum", icon: "/icons/agile.png" },
+      { name: "REST API", icon: "/icons/rest-api.png" },
+      { name: "Documentation", icon: "/icons/documentation.png" },
+    ],
+  },
+
+  // Soft Skills
+  softSkills: [
+    { name: "Critical Thinking", icon: "lightbulb" },
+    { name: "Communication", icon: "message-circle" },
+    { name: "Teamwork", icon: "users" },
+    { name: "Problem Solving", icon: "puzzle" },
+    { name: "Leadership", icon: "crown" },
+  ],
+
+  // Language Proficiency
+  // Ganti path flag dengan gambar bendera negara (taruh di folder public/icons/flags/)
+  languages: [
+    { name: "Indonesian", level: "Native", flag: "/icons/flags/indonesia.png" },
+    { name: "English", level: "Intermediate", flag: "/icons/flags/uk.png" },
+  ],
 };
 
 // Data untuk Hero Section
@@ -400,6 +445,7 @@ export const projectsData = [
       "/placeholder-project-1-3.jpg"
     ],
     description: "[DESKRIPSI_PROJECT_1]",
+    technologies: ["Figma", "Adobe Illustrator", "Prototyping"]
   },
   {
     id: "project-2",
@@ -412,6 +458,7 @@ export const projectsData = [
       "/placeholder-project-2-2.jpg"
     ],
     description: "[DESKRIPSI_PROJECT_2]",
+    technologies: ["Python", "Django", "PostgreSQL", "JavaScript"]
   },
   {
     id: "project-3",
@@ -423,6 +470,7 @@ export const projectsData = [
       "/placeholder-project-3-1.jpg"
     ],
     description: "[DESKRIPSI_PROJECT_3]",
+    technologies: ["React", "JavaScript", "Tailwind CSS", "Vite"]
   },
   {
     id: "project-4",
@@ -434,6 +482,7 @@ export const projectsData = [
       "/placeholder-project-4-1.jpg"
     ],
     description: "[DESKRIPSI_PROJECT_4]",
+    technologies: ["Python", "Pandas", "NumPy", "Matplotlib"]
   },
   {
     id: "project-5",
@@ -445,6 +494,7 @@ export const projectsData = [
       "/placeholder-project-5-1.jpg"
     ],
     description: "[DESKRIPSI_PROJECT_5]",
+    technologies: ["Figma", "UI/UX", "User Research"]
   },
   {
     id: "project-6",
@@ -456,6 +506,7 @@ export const projectsData = [
       "/placeholder-project-6-1.jpg"
     ],
     description: "[DESKRIPSI_PROJECT_6]",
+    technologies: ["HTML", "CSS", "JavaScript"]
   }
 ];
 
@@ -485,7 +536,7 @@ export const socialsData = {
     {
       id: "social-4",
       name: "Email",
-      url: "mailto:[EMAIL_ANDA]",
+      url: "mailto:raihanzhafranh@gmail.com",
       icon: "mail"
     },
     {
