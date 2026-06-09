@@ -84,9 +84,10 @@ const SkillDetailModal = ({ skill, onClose }) => {
               {skill.name}
             </h3>
             
-            <p className="text-white/80 leading-relaxed text-lg">
-              {skill.description}
-            </p>
+            <p
+              className="text-white/80 leading-relaxed text-lg"
+              dangerouslySetInnerHTML={{ __html: skill.description }}
+            />
           </div>
         </motion.div>
       </motion.div>

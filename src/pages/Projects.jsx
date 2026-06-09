@@ -46,6 +46,15 @@ const Projects = () => {
           onClose={() => setSelectedProject(null)}
         />
       )}
+              {/* Helper Text
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="text-center text-white/50 text-sm"
+        >
+        Click for More
+        </motion.p> */}
     </>
   );
 };

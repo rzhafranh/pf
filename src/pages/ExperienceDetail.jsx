@@ -62,9 +62,10 @@ const ExperienceDetail = () => {
             </p>
             
             {/* Full Description */}
-            <p className="text-white/80 leading-relaxed text-lg max-w-4xl">
-              {experience.fullDescription}
-            </p>
+            <p
+              className="text-white/80 leading-relaxed text-lg max-w-4xl"
+              dangerouslySetInnerHTML={{ __html: experience.fullDescription }}
+            />
           </motion.div>
           
           {/* Skills Section */}

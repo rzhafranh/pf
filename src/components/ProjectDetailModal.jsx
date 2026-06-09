@@ -20,8 +20,10 @@ const ProjectDetailModal = ({ project, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageOverlay, setIsImageOverlay] = useState(false);
   const [autoSlideTimer, setAutoSlideTimer] = useState(null);
-  
-  const badgeInfo = getBadgeColor(project.type);
+
+  const projectTypes = Array.isArray(project.types)
+    ? project.types
+    : (project.type ? [project.type] : []);
   
   // Auto-slide functionality
   useEffect(() => {
@@ -136,18 +138,27 @@ const ProjectDetailModal = ({ project, onClose }) => {
                 {project.subtitle}
               </p>
               
-              {/* Badge and Year */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`${badgeInfo.bg} px-3 py-1 rounded-md text-white text-xs font-bold`}>
-                  {badgeInfo.text}
-                </div>
+              {/* Badges and Year */}
+              <div className="flex flex-wrap items-center gap-2 mb-6">
+                {projectTypes.map((type) => {
+                  const badgeInfo = getBadgeColor(type);
+                  return (
+                    <span
+                      key={`${project.id}-${type}`}
+                      className={`${badgeInfo.bg} px-3 py-1 rounded-md text-white text-xs font-bold`}
+                    >
+                      {badgeInfo.text}
+                    </span>
+                  );
+                })}
                 <span className="text-white/60">{project.year}</span>
               </div>
               
               {/* Description */}
-              <p className="text-white/80 leading-relaxed text-lg">
-                {project.description}
-              </p>
+              <p
+                className="text-white/80 leading-relaxed text-lg"
+                dangerouslySetInnerHTML={{ __html: project.description }}
+              />
               
               {/* Technologies */}
               {project.technologies && project.technologies.length > 0 && (

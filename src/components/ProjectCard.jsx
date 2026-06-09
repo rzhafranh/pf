@@ -2,7 +2,10 @@ import { motion } from 'framer-motion';
 import { getBadgeColor } from '../data';
 
 const ProjectCard = ({ project, onClick }) => {
-  const badgeInfo = getBadgeColor(project.type);
+  const projectTypes = Array.isArray(project.types)
+    ? project.types
+    : (project.type ? [project.type] : []);
+  const primaryType = projectTypes[0] || project.type;
   
   return (
     <motion.div
@@ -18,9 +21,10 @@ const ProjectCard = ({ project, onClick }) => {
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           onError={(e) => {
             e.target.src = `https://via.placeholder.com/400x400/1F1F2E/${
-              project.type === 'uiux' ? 'B026FF' :
-              project.type === 'coding' ? '888888' :
-              project.type === 'webdev' ? 'FF8800' :
+              primaryType === 'uiux' ? 'B026FF' :
+              primaryType === 'coding' ? '888888' :
+              primaryType === 'webdev' ? 'FF8800' :
+              primaryType === 'ai' ? '6366F1' :
               'FFFF00'
             }?text=${encodeURIComponent(project.title)}`;
           }}
@@ -30,15 +34,32 @@ const ProjectCard = ({ project, onClick }) => {
       
       {/* Content */}
       <div className="relative h-full p-6 flex flex-col justify-end">
-        {/* Badge */}
-        <div className={`inline-block ${badgeInfo.bg} px-3 py-1 rounded-md text-white text-xs font-bold mb-3 w-fit`}>
-          {badgeInfo.text}
+        {/* Badges */}
+        <div className="flex flex-wrap gap-2 mb-3">
+          {projectTypes.map((type) => {
+            const badgeInfo = getBadgeColor(type);
+            return (
+              <span
+                key={`${project.id}-${type}`}
+                className={`inline-block ${badgeInfo.bg} px-3 py-1 rounded-md text-white text-xs font-bold w-fit`}
+              >
+                {badgeInfo.text}
+              </span>
+            );
+          })}
         </div>
         
         {/* Title */}
-        <h3 className="text-2xl font-bold text-white mb-2 line-clamp-2">
+        <h3 className="text-2xl font-bold text-white mb-1 line-clamp-2">
           {project.title}
         </h3>
+
+        {/* Subtitle */}
+        {project.subtitle && (
+          <p className="text-sm text-white/75 mb-2 line-clamp-2">
+            {project.subtitle}
+          </p>
+        )}
         
         {/* Year */}
         <p className="text-sm text-white/70">

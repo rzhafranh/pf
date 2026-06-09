@@ -47,6 +47,34 @@ body {
   background-color: #B026FF;
 }
 
+.highlight-word {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0A0A0F;
+  padding: 0.05em 0.35em;
+  border-radius: 0.35rem;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.12);
+  font-weight: 700;
+}
+
+@keyframes glow-bubble-breathe {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.35;
+  }
+}
+
+.glow-bubble {
+  animation-name: glow-bubble-breathe;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
 /* Custom utility classes */
 .glass-effect {
   background: rgba(255, 255, 255, 0.05);
@@ -151,5 +179,96 @@ body {
 
 .animate-aurora-4 {
   animation: aurora-float-4 28s infinite alternate ease-in-out;
+}
+
+/* Breathing Glow Effects */
+@keyframes breathing-glow-1 {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes breathing-glow-2 {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes breathing-glow-3 {
+  0%, 100% {
+    opacity: 0.22;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.42;
+    transform: scale(1.18);
+  }
+}
+
+@keyframes breathing-glow-4 {
+  0%, 100% {
+    opacity: 0.28;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.48;
+    transform: scale(1.22);
+  }
+}
+
+@keyframes breathing-glow-5 {
+  0%, 100% {
+    opacity: 0.18;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.38;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes breathing-glow-6 {
+  0%, 100% {
+    opacity: 0.24;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.44;
+    transform: scale(1.2);
+  }
+}
+
+.animate-breathing-1 {
+  animation: breathing-glow-1 6s infinite ease-in-out;
+}
+
+.animate-breathing-2 {
+  animation: breathing-glow-2 7s infinite ease-in-out;
+}
+
+.animate-breathing-3 {
+  animation: breathing-glow-3 5.5s infinite ease-in-out;
+}
+
+.animate-breathing-4 {
+  animation: breathing-glow-4 8s infinite ease-in-out;
+}
+
+.animate-breathing-5 {
+  animation: breathing-glow-5 6.5s infinite ease-in-out;
+}
+
+.animate-breathing-6 {
+  animation: breathing-glow-6 7.5s infinite ease-in-out;
 }
 

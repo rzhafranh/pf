@@ -75,9 +75,10 @@ const ExperienceCard = ({ experience, onClick }) => {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <p className="text-sm text-white/90 leading-relaxed mb-4">
-              {experience.shortDescription}
-            </p>
+            <p
+              className="text-sm text-white/90 leading-relaxed mb-4"
+              dangerouslySetInnerHTML={{ __html: experience.shortDescription }}
+            />
           </motion.div>
         </div>
         

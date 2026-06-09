@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { aboutData } from '../data';
-import { Lightbulb, MessageCircle, Users, Puzzle, Crown, HelpCircle } from 'lucide-react';
+import { 
+  Lightbulb, MessageCircle, Users, Puzzle, Crown, Clock, Search, Rocket, 
+  Palette, Scale, RotateCcw, Target, Lectern, HelpCircle 
+} from 'lucide-react';
 
 // Map soft-skill icon names to lucide components
 const softSkillIconMap = {
@@ -9,6 +12,14 @@ const softSkillIconMap = {
   users: Users,
   puzzle: Puzzle,
   crown: Crown,
+  clock: Clock,
+  search: Search,
+  rocket: Rocket,
+  palette: Palette,
+  scale: Scale,
+  'rotate-ccw': RotateCcw,
+  target: Target,
+  lectern: Lectern,
 };
 const getSoftSkillIcon = (name) => softSkillIconMap[name] || HelpCircle;
 
@@ -16,7 +27,7 @@ const getSoftSkillIcon = (name) => softSkillIconMap[name] || HelpCircle;
 const categoryMeta = [
   {
     key: 'graphicDesignUIUX',
-    title: 'Graphic Design & UI/UX',
+    title: 'Graphic Design & Editing',
     gradient: 'from-electric-pink to-electric-purple',
     glow: 'rgba(255, 0, 128, 0.35)',
   },
@@ -105,9 +116,8 @@ const About = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
               className="text-base md:text-lg text-white/80 leading-relaxed"
-            >
-              {aboutData.description}
-            </motion.p>
+              dangerouslySetInnerHTML={{ __html: aboutData.description }}
+            />
           </div>
         </motion.div>
 
@@ -134,27 +144,33 @@ const About = () => {
                   className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
                 >
                   {/* Category title */}
-                  <h3 className={`text-lg font-semibold mb-5 bg-gradient-to-r ${cat.gradient} bg-clip-text text-transparent`}>
+                  <h3 className={`text-lg font-semibold mb-6 bg-gradient-to-r ${cat.gradient} bg-clip-text text-transparent`}>
                     {cat.title}
                   </h3>
 
-                  {/* Skill chips */}
-                  <div className="flex flex-wrap gap-3">
+                  {/* Skills grid - 3 columns */}
+                  <div className="grid grid-cols-3 gap-6">
                     {skills.map((skill) => (
                       <motion.div
                         key={skill.name}
-                        whileHover={{ scale: 1.08, boxShadow: `0 0 18px ${cat.glow}` }}
-                        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.06] border border-white/10 text-white/90 text-sm transition-colors hover:border-white/25"
+                        whileHover={{ scale: 1.08, y: -4 }}
+                        className="flex flex-col items-center gap-3 group"
                       >
-                        <img
-                          src={skill.icon}
-                          alt={skill.name}
-                          className="w-5 h-5 object-contain"
-                          onError={(e) => {
-                            e.target.style.display = 'none';
-                          }}
-                        />
-                        <span>{skill.name}</span>
+                        {/* Icon container */}
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 flex items-center justify-center transition-all group-hover:border-electric-blue/40">
+                          <img
+                            src={skill.icon}
+                            alt={skill.name}
+                            className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                            }}
+                          />
+                        </div>
+                        {/* Skill name */}
+                        <span className="text-xs md:text-sm text-white/70 font-medium text-center group-hover:text-white/90 transition-colors">
+                          {skill.name}
+                        </span>
                       </motion.div>
                     ))}
                   </div>

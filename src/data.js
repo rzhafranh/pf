@@ -1,8 +1,8 @@
 // Data untuk halaman About Me
 export const aboutData = {
   name: "Raihan Zhafran",
-  photo: "/placeholder-profile.jpg", // Ganti dengan path foto Anda
-  description: "UI/UX Designer and System Developer with a Computer Science background from IPB University and a proven track record of bridging technical architecture with user-centered functionality. Specialized in translating complex business requirements into scalable digital solutions, leveraging a full-stack mentality to manage everything from database logic to front-end deployment. Experienced in leading technical initiatives and cross-functional teams, applying disciplined project tracking to ensure robust system delivery within high-stakes environments. Capable in translating user needs and system requirements into intuitive interfaces, design systems, and high-fidelity prototypes. Experienced in leading UI/UX initiatives across academic projects, student organizations, and competitions, with strong collaboration skills across design and engineering teams.",
+  photo: "/images/profile.png", // Ganti dengan path foto Anda
+  description: "<span class=\"highlight-word\">UI/UX Designer</span> & <span class=\"highlight-word\">System Developer</span> with a Computer Science background from IPB University, specialized in bridging technical architecture with user-centered functionality. Leveraging a full-stack mentality, from database logic to front-end deployment, to translate complex business requirements into scalable digital solutions. Proven track record of leading cross-functional teams and technical initiatives, delivering robust systems and intuitive design systems in high-stakes environments.",
 
   // Hard Skills - divided into 4 categories
   // Ganti path icon dengan path gambar logo skill Anda (taruh di folder public/icons/)
@@ -11,29 +11,33 @@ export const aboutData = {
       { name: "Figma", icon: "/icons/figma.png" },
       { name: "Adobe Photoshop", icon: "/icons/photoshop.png" },
       { name: "Adobe Illustrator", icon: "/icons/illustrator.png" },
+      { name: "Adobe Lightroom", icon: "/icons/lightroom.png" },
+      { name: "Adobe Premiere Pro", icon: "/icons/premiere-pro.png" },
       { name: "Canva", icon: "/icons/canva.png" },
-      { name: "Prototyping", icon: "/icons/prototyping.png" },
+      { name: "CapCut", icon: "/icons/capcut.png" },
     ],
     codingProgramming: [
       { name: "JavaScript", icon: "/icons/javascript.png" },
       { name: "Python", icon: "/icons/python.png" },
-      { name: "HTML/CSS", icon: "/icons/html-css.png" },
-      { name: "React", icon: "/icons/react.png" },
+      { name: "HTML", icon: "/icons/html.png" },
+      { name: "CSS", icon: "/icons/css.png" },
       { name: "SQL", icon: "/icons/sql.png" },
+      { name: "Java", icon: "/icons/java.png" },
+      { name: "C++", icon: "/icons/C++.png" },
+      { name: "C", icon: "/icons/C.png" },
+      { name: "R", icon: "/icons/R.png" },
     ],
     dataScience: [
-      { name: "Pandas", icon: "/icons/pandas.png" },
-      { name: "Data Visualization", icon: "/icons/data-viz.png" },
-      { name: "Machine Learning", icon: "/icons/machine-learning.png" },
+      { name: "Microsoft PowerBI", icon: "/icons/powerbi.png" },
+      { name: "GraphPad Prism", icon: "/icons/graphpad-prism.png" },
       { name: "Jupyter", icon: "/icons/jupyter.png" },
-      { name: "Statistics", icon: "/icons/statistics.png" },
     ],
     other: [
-      { name: "Git", icon: "/icons/git.png" },
-      { name: "Linux", icon: "/icons/linux.png" },
-      { name: "Agile/Scrum", icon: "/icons/agile.png" },
-      { name: "REST API", icon: "/icons/rest-api.png" },
-      { name: "Documentation", icon: "/icons/documentation.png" },
+      { name: "Microsoft Office 365", icon: "/icons/msoffice.png" },
+      { name: "Google Suite", icon: "/icons/google-suite.png" },
+      { name: "React js", icon: "/icons/react.png" },
+      { name: "Tailwind CSS", icon: "/icons/tailwind.png" },
+      { name: "Vercel", icon: "/icons/vercel.png" },
     ],
   },
 
@@ -44,6 +48,14 @@ export const aboutData = {
     { name: "Teamwork", icon: "users" },
     { name: "Problem Solving", icon: "puzzle" },
     { name: "Leadership", icon: "crown" },
+    { name: "Time Management", icon: "clock" },
+    { name: "Detail Oriented", icon: "search" },
+    { name: "Fast-Learning", icon: "rocket" },
+    { name: "Creative", icon: "palette" },
+    { name: "Decision Making", icon: "scale" },
+    { name: "Adaptive", icon: "rotate-ccw" },
+    { name: "Target Oriented", icon: "target" },
+    { name: "Public Speaking", icon: "lectern" },
   ],
 
   // Language Proficiency
@@ -67,15 +79,15 @@ export const professionalExperiences = [
     id: "prof-1",
     type: "professional", // professional, organization, event
     title: "System Developer Intern",
-    company: "PT Astemo Bekasi Manufacturing]",
+    company: "PT Astemo Bekasi Manufacturing",
     period: "Oct - Dec 2025",
-    image: "/placeholder-prof-1.jpg",
-    shortDescription: "[DESKRIPSI_SINGKAT_1_PARAGRAF]",
+    image: "/images/PT Astemo.jpg",
+    shortDescription: "this is a text",
     fullDescription: "[DESKRIPSI_LENGKAP_PENGALAMAN]",
     skills: [
       {
         id: "skill-1",
-        name: "[NAMA_SKILL_1]",
+        name: "Web Development",
         image: "/placeholder-skill-1.jpg",
         description: "[DESKRIPSI_SKILL_1]",
         gallery: [
@@ -86,35 +98,35 @@ export const professionalExperiences = [
       },
       {
         id: "skill-2",
-        name: "[NAMA_SKILL_2]",
+        name: "Business Process Analysis",
         image: "/placeholder-skill-2.jpg",
         description: "[DESKRIPSI_SKILL_2]",
         gallery: []
       },
       {
         id: "skill-3",
-        name: "[NAMA_SKILL_3]",
+        name: "Database Management",
         image: "/placeholder-skill-3.jpg",
         description: "[DESKRIPSI_SKILL_3]",
         gallery: []
       },
       {
         id: "skill-4",
-        name: "[NAMA_SKILL_4]",
+        name: "System Design",
         image: "/placeholder-skill-4.jpg",
         description: "[DESKRIPSI_SKILL_4]",
         gallery: []
       },
       {
         id: "skill-5",
-        name: "[NAMA_SKILL_5]",
+        name: "Project Management",
         image: "/placeholder-skill-5.jpg",
         description: "[DESKRIPSI_SKILL_5]",
         gallery: []
       },
       {
         id: "skill-6",
-        name: "[NAMA_SKILL_6]",
+        name: "Communication",
         image: "/placeholder-skill-6.jpg",
         description: "[DESKRIPSI_SKILL_6]",
         gallery: []
@@ -239,7 +251,7 @@ export const organizationExperiences = [
     title: "Head of Creative and Branding Division",
     company: "Himpunan Mahasiswa Ilmu Komputer IPB",
     period: "Jan - Dec 2025",
-    image: "/placeholder-org-1.jpg",
+    image: "images/Experiences/Organizations & Events/Himalkom25.jpeg",
     shortDescription: "[DESKRIPSI_SINGKAT_1]",
     fullDescription: "[DESKRIPSI_LENGKAP_1]",
     skills: [
@@ -293,7 +305,7 @@ export const organizationExperiences = [
     title: "Chairman",
     company: "AgriUX",
     period: "Nov 2023 - Nov2024",
-    image: "/placeholder-org-2.jpg",
+    image: "images/Experiences/Organizations & Events/AgriUX.png",
     shortDescription: "[DESKRIPSI_SINGKAT_2]",
     fullDescription: "[DESKRIPSI_LENGKAP_2]",
     skills: [
@@ -347,7 +359,7 @@ export const organizationExperiences = [
     title: "Staff of Creative and Branding Division",
     company: "Himpunan Mahasiswa Ilmu Komputer IPB",
     period: "Jan - Dec 2024",
-    image: "/placeholder-org-3.jpg",
+    image: "images/Experiences/Organizations & Events/Himalkom24.JPG",
     shortDescription: "[DESKRIPSI_SINGKAT_3]",
     fullDescription: "[DESKRIPSI_LENGKAP_3]",
     skills: []
@@ -358,7 +370,7 @@ export const organizationExperiences = [
     title: "Chairman",
     company: "Saung Desain 2024",
     period: "May - Nov 2024",
-    image: "/placeholder-event-1.jpg",
+    image: "images/Experiences/Organizations & Events/SD24.JPG",
     shortDescription: "[DESKRIPSI_SINGKAT_1]",
     fullDescription: "[DESKRIPSI_LENGKAP_1]",
     skills: []
@@ -366,34 +378,12 @@ export const organizationExperiences = [
   {
     id: "event-2",
     type: "event",
-    title: "UXToday Head Division",
+    title: "Head of UXToday Division",
     company: "ITTODAY 2024",
     period: "Apr - Oct 2024",
-    image: "/placeholder-event-2.jpg",
+    image: "images/Experiences/Organizations & Events/UXToday.png",
     shortDescription: "[DESKRIPSI_SINGKAT_2]",
     fullDescription: "[DESKRIPSI_LENGKAP_2]",
-    skills: []
-  },
-  {
-    id: "org-4",
-    type: "organization",
-    title: "Head of Communication and Publication Division",
-    company: "UKM Panahan IPB",
-    period: "Dec 2023 - Dec 2024",
-    image: "/placeholder-event-3.jpg",
-    shortDescription: "[DESKRIPSI_SINGKAT_3]",
-    fullDescription: "[DESKRIPSI_LENGKAP_3]",
-    skills: []
-  },
-  {
-    id: "event-3",
-    type: "event",
-    title: "Staff of Design, Documentation, and Branding Division",
-    company: "CPSC 2024",
-    period: "Jun - Oct 2024",
-    image: "/placeholder-event-4.jpg",
-    shortDescription: "[DESKRIPSI_SINGKAT_4]",
-    fullDescription: "[DESKRIPSI_LENGKAP_4]",
     skills: []
   },
   {
@@ -402,7 +392,7 @@ export const organizationExperiences = [
     title: "Staff of Creative Division",
     company: "Pekan Ilkomerz 60",
     period: "May - Sep 2024",
-    image: "/placeholder-event-5.jpg",
+    image: "images/Experiences/Organizations & Events/PI60.JPG",
     shortDescription: "[DESKRIPSI_SINGKAT_5]",
     fullDescription: "[DESKRIPSI_LENGKAP_5]",
     skills: []
@@ -413,7 +403,7 @@ export const organizationExperiences = [
     title: "Vice Chairperson of the Creative Division",
     company: "IPB Archery Open 2023",
     period: "Aug - Oct 2023",
-    image: "/placeholder-event-6.jpg",
+    image: "images/Experiences/Organizations & Events/IAO23.jpg",
     shortDescription: "[DESKRIPSI_SINGKAT_6]",
     fullDescription: "[DESKRIPSI_LENGKAP_6]",
     skills: []
@@ -421,23 +411,46 @@ export const organizationExperiences = [
   {
     id: "event-6",
     type: "event",
-    title: "Media Branding Division Staff",
+    title: "Staff of Media Branding Division",
     company: "Ilkomerz Night 2023",
     period: "Oct - Dec 2023",
-    image: "/placeholder-event-6.jpg",
+    image: "images/Experiences/Organizations & Events/Inight23.JPG",
     shortDescription: "[DESKRIPSI_SINGKAT_6]",
     fullDescription: "[DESKRIPSI_LENGKAP_6]",
+    skills: []
+  },
+  {
+    id: "event-7",
+    type: "event",
+    title: "Staff of Event Division",
+    company: "Saung Desain 2023",
+    period: "Jul - Nov 2023",
+    image: "images/Experiences/Organizations & Events/SD23.JPG",
+    shortDescription: "[DESKRIPSI_SINGKAT_7]",
+    fullDescription: "[DESKRIPSI_LENGKAP_7]",
     skills: []
   }
 ];
 
 // Data untuk Projects
 export const projectsData = [
-  {
+    {
     id: "project-1",
-    type: "uiux", // uiux, coding, webdev, data
-    title: "[JUDUL_PROJECT_1]",
-    subtitle: "[SUBTITLE_PROJECT_1]",
+    type: "webdev",
+    title: "Personal Portfolio Website",
+    subtitle: "Web Development Project",
+    year: "2026",
+    images: [
+      "/placeholder-project-6-1.jpg"
+    ],
+    description: "[DESKRIPSI_PROJECT_6]",
+    technologies: ["HTML", "CSS", "JavaScript"]
+  },
+  {
+    id: "project-6",
+    type: "data", // uiux, coding, webdev, data, ai
+    title: "Data Visualization with Microsoft PowerBI",
+    subtitle: "Capstone Project",
     year: "2025",
     images: [
       "/placeholder-project-1-1.jpg",
@@ -445,38 +458,38 @@ export const projectsData = [
       "/placeholder-project-1-3.jpg"
     ],
     description: "[DESKRIPSI_PROJECT_1]",
-    technologies: ["Figma", "Adobe Illustrator", "Prototyping"]
+    technologies: ["Microsoft PowerBI"]
   },
   {
     id: "project-2",
-    type: "coding",
-    title: "[JUDUL_PROJECT_2]",
-    subtitle: "[SUBTITLE_PROJECT_2]",
-    year: "2025",
+    type: "ai",
+    title: "Graduation Status Prediction Model with Python",
+    subtitle: "Data Mining Final Project",
+    year: "2024",
     images: [
       "/placeholder-project-2-1.jpg",
       "/placeholder-project-2-2.jpg"
     ],
     description: "[DESKRIPSI_PROJECT_2]",
-    technologies: ["Python", "Django", "PostgreSQL", "JavaScript"]
+    technologies: ["Python"]
   },
   {
     id: "project-3",
-    type: "webdev",
-    title: "[JUDUL_PROJECT_3]",
-    subtitle: "[SUBTITLE_PROJECT_3]",
-    year: "2024",
+    type: "ai",
+    title: "Digital Image Processing Projects",
+    subtitle: "Digital Image Processing",
+    year: "2025",
     images: [
       "/placeholder-project-3-1.jpg"
     ],
     description: "[DESKRIPSI_PROJECT_3]",
-    technologies: ["React", "JavaScript", "Tailwind CSS", "Vite"]
+    technologies: ["Python"]
   },
   {
     id: "project-4",
-    type: "data",
-    title: "[JUDUL_PROJECT_4]",
-    subtitle: "[SUBTITLE_PROJECT_4]",
+    types: ["uiux", "webdev"],
+    title: "Reservation System for Clinic in IPB University",
+    subtitle: "Software Engineering Final Project",
     year: "2024",
     images: [
       "/placeholder-project-4-1.jpg"
@@ -487,50 +500,39 @@ export const projectsData = [
   {
     id: "project-5",
     type: "uiux",
-    title: "[JUDUL_PROJECT_5]",
-    subtitle: "[SUBTITLE_PROJECT_5]",
-    year: "2023",
+    title: "IPB Mobile Attendance Feature Redesign",
+    subtitle: "User Experience Design Final Project",
+    year: "2024",
     images: [
       "/placeholder-project-5-1.jpg"
     ],
     description: "[DESKRIPSI_PROJECT_5]",
     technologies: ["Figma", "UI/UX", "User Research"]
   },
-  {
-    id: "project-6",
-    type: "webdev",
-    title: "[JUDUL_PROJECT_6]",
-    subtitle: "[SUBTITLE_PROJECT_6]",
-    year: "2023",
-    images: [
-      "/placeholder-project-6-1.jpg"
-    ],
-    description: "[DESKRIPSI_PROJECT_6]",
-    technologies: ["HTML", "CSS", "JavaScript"]
-  }
+
 ];
 
 // Data untuk Socials
 export const socialsData = {
-  photo: "/placeholder-profile.jpg",
+  photo: "/images/socialpic.png", // Ganti dengan path foto Anda
   message: "Get in touch with me!",
   socials: [
     {
       id: "social-1",
       name: "LinkedIn",
-      url: "[URL_LINKEDIN]",
+      url: "https://www.linkedin.com/in/raihan-zhafran/",
       icon: "linkedin"
     },
     {
       id: "social-2",
       name: "GitHub",
-      url: "[URL_GITHUB]",
+      url: "https://github.com/rzhafranh",
       icon: "github"
     },
     {
       id: "social-3",
       name: "Instagram",
-      url: "[URL_INSTAGRAM]",
+      url: "https://www.instagram.com/rzhafranh/",
       icon: "instagram"
     },
     {
@@ -541,14 +543,14 @@ export const socialsData = {
     },
     {
       id: "social-5",
-      name: "Dribbble",
-      url: "[URL_DRIBBBLE]",
+      name: "Whatsapp",
+      url: "https://api.whatsapp.com/send/?phone=6282260302171&text&type=phone_number&app_absent=0",
       icon: "dribbble"
     },
     {
       id: "social-6",
       name: "Behance",
-      url: "[URL_BEHANCE]",
+      url: "https://www.behance.net/raihanzhafran",
       icon: "behance"
     }
   ]
@@ -563,7 +565,8 @@ export const getBadgeColor = (type) => {
     uiux: { bg: "bg-purple-500", text: "UI/UX & GRAPHIC DESIGN" },
     coding: { bg: "bg-gray-500", text: "CODING & PROGRAMMING" },
     webdev: { bg: "bg-orange-500", text: "WEB DEVELOPMENT" },
-    data: { bg: "bg-yellow-500", text: "DATA" }
+    data: { bg: "bg-yellow-500", text: "DATA" },
+    ai: { bg: "bg-pink-500", text: "MACHINE LEARNING & AI" }
   };
   return colors[type] || colors.professional;
 };
