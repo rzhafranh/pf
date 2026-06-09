@@ -14,9 +14,9 @@ Portfolio website modern dan interaktif yang dibangun dengan React, Vite, Tailwi
 
 ```
 PortfolioWebsite/
-├── public/               # Assets statis (placeholder images)
+├── public/               
 ├── src/
-│   ├── components/       # Komponen reusable
+│   ├── components/       
 │   │   ├── Navbar.jsx
 │   │   ├── Hero.jsx
 │   │   ├── ExperienceCard.jsx
@@ -24,13 +24,13 @@ PortfolioWebsite/
 │   │   ├── SkillDetailModal.jsx
 │   │   ├── ProjectCard.jsx
 │   │   └── ProjectDetailModal.jsx
-│   ├── pages/           # Halaman utama
+│   ├── pages/           
 │   │   ├── About.jsx
 │   │   ├── Experiences.jsx
 │   │   ├── ExperienceDetail.jsx
 │   │   ├── Projects.jsx
 │   │   └── Socials.jsx
-│   ├── data.js          # ⚠️ FILE PENTING - Data dummy untuk diisi
+│   ├── data.js         
 │   ├── App.jsx
 │   ├── main.jsx
 │   └── index.css
